@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shaquille Warren | Portfolio</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #1a1a2e;
+      background: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    /* ── Header / Nav ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #1a1a2e;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    header .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+    header nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: #4cc9f0; }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #fff;
+      padding: 2rem;
+    }
+    #hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+    #hero h1 span { color: #4cc9f0; }
+    #hero .tagline {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      max-width: 600px;
+      color: #c9d1d9;
+      margin-bottom: 1.5rem;
+    }
+    #hero .contact-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 2rem;
+      font-size: 0.95rem;
+      color: #a0b4c8;
+      margin-bottom: 2rem;
+    }
+    #hero .contact-meta a {
+      color: #a0b4c8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    #hero .contact-meta a:hover { color: #4cc9f0; }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      background: #4cc9f0;
+      color: #1a1a2e;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn:hover { background: #72d9f5; transform: translateY(-2px); }
+
+    /* ── Sections shared ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #0f3460;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: #4cc9f0;
+      border-radius: 2px;
+      margin-top: 0.4rem;
+    }
+
+    /* ── About Me ── */
+    #about { background: #fff; }
+    #about p {
+      margin-top: 1.5rem;
+      font-size: 1.05rem;
+      color: #444;
+      max-width: 700px;
+    }
+
+    /* ── Skills ── */
+    #skills { background: #f5f7fa; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .skill-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.4rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+    .skill-card h3 {
+      font-size: 1rem;
+      color: #0f3460;
+      margin-bottom: 0.6rem;
+    }
+    .skill-bar-bg {
+      background: #e0e0e0;
+      border-radius: 4px;
+      height: 8px;
+      overflow: hidden;
+    }
+    .skill-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #4cc9f0, #4361ee);
+      border-radius: 4px;
+    }
+
+    /* ── Experience ── */
+    #experience { background: #fff; }
+    .experience-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .experience-item {
+      border-left: 4px solid #4cc9f0;
+      padding-left: 1.5rem;
+    }
+    .experience-item h3 {
+      font-size: 1.15rem;
+      color: #0f3460;
+      margin-bottom: 0.2rem;
+    }
+    .experience-item .meta {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 0.8rem;
+    }
+    .experience-item ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      color: #444;
+      font-size: 1rem;
+    }
+    .experience-item ul li { margin-bottom: 0.4rem; }
+
+    /* ── Education & Certifications ── */
+    #education { background: #f5f7fa; }
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) { .edu-grid { grid-template-columns: 1fr; } }
+    .edu-block h3 {
+      font-size: 1.1rem;
+      color: #0f3460;
+      margin-bottom: 1rem;
+    }
+    .edu-block ul {
+      list-style: none;
+      padding: 0;
+      color: #444;
+      font-size: 1rem;
+    }
+    .edu-block ul li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .edu-block ul li:last-child { border-bottom: none; }
+    .edu-block ul li .year {
+      font-size: 0.85rem;
+      color: #999;
+      white-space: nowrap;
+    }
+    .cert-list {
+      list-style: none;
+      padding: 0;
+      color: #444;
+      font-size: 1rem;
+    }
+    .cert-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .cert-list li:last-child { border-bottom: none; }
+    .cert-list li::before {
+      content: '✓';
+      color: #4cc9f0;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #1a1a2e;
+      color: #888;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ───────────── Header ───────────── -->
+  <header>
+    <div class="logo">Shaquille Warren</div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="mailto:shaquillewarren10@yahoo.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ───────────── Hero ───────────── -->
+  <section id="hero">
+    <h1>Hi, I'm <span>Shaquille Warren</span></h1>
+    <p class="tagline">
+      Detail-oriented professional with 8+ years in logistics &amp; operations,
+      transitioning into IT. Passionate about problem-solving, technology, and
+      delivering results under pressure.
+    </p>
+    <div class="contact-meta">
+      <span>📍 Richmond, VA</span>
+      <a href="tel:+18045173670">📞 804-517-3670</a>
+      <a href="mailto:shaquillewarren10@yahoo.com">✉ shaquillewarren10@yahoo.com</a>
+      <a href="https://www.linkedin.com/in/shaquille-warren" target="_blank" rel="noopener">🔗 LinkedIn</a>
+    </div>
+    <a href="#about" class="btn">Learn More About Me</a>
+  </section>
+
+  <!-- ───────────── About Me ───────────── -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        Detail-oriented and dependable professional with 8+ years of experience in the
+        trucking and logistics industry, bringing strong problem-solving, operational
+        efficiency, and leadership skills into the IT field.
+      </p>
+      <p>
+        Experienced in troubleshooting, compliance management, route optimization, and
+        high-pressure decision-making. Seeking an entry-level IT role where technical
+        aptitude, analytical thinking, and customer service experience can contribute to
+        organizational success.
+      </p>
+    </div>
+  </section>
+
+  <!-- ───────────── Skills ───────────── -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Technical Troubleshooting</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Problem Solving &amp; Critical Thinking</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Customer Service &amp; Client Communication</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Team Leadership &amp; Coordination</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Logistics Systems &amp; Documentation</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 95%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Safety &amp; Compliance Management</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 95%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Equipment Handling</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Adaptability &amp; Fast Learning</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 88%"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── Experience ───────────── -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="experience-list">
+
+        <div class="experience-item">
+          <h3>CDL Driver | Hazmat &amp; Tanker Certified</h3>
+          <p class="meta">Various Employers — Virginia &nbsp;·&nbsp; 2016 – Present</p>
+          <ul>
+            <li>Operated commercial vehicles safely while maintaining strict DOT and Hazmat compliance.</li>
+            <li>Managed digital logging systems and electronic documentation.</li>
+            <li>Troubleshot vehicle and route-related issues under time-sensitive conditions.</li>
+            <li>Maintained accurate records and ensured regulatory compliance.</li>
+            <li>Coordinated with dispatch, clients, and warehouse teams to ensure efficient delivery operations.</li>
+            <li>Demonstrated leadership in team-based delivery environments.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h3>Warehouse Associate</h3>
+          <p class="meta">Various Employers — Virginia &nbsp;·&nbsp; 2013 – 2016</p>
+          <ul>
+            <li>Managed inventory control and logistics tracking systems.</li>
+            <li>Operated warehouse equipment and handled heavy freight.</li>
+            <li>Assisted in process improvement for shipping and receiving workflows.</li>
+            <li>Maintained accuracy in fast-paced distribution environments.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── Education & Certifications ───────────── -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education &amp; Certifications</h2>
+      <div class="edu-grid">
+
+        <div class="edu-block">
+          <h3>Education</h3>
+          <ul>
+            <li>
+              <span>Liberty University</span>
+              <span class="year">2011 – 2012</span>
+            </li>
+            <li>
+              <span>John Tyler Community College</span>
+              <span class="year">2013</span>
+            </li>
+            <li>
+              <span>Advanced Studies Diploma</span>
+              <span class="year"></span>
+            </li>
+            <li>
+              <span>High School Graduate</span>
+              <span class="year"></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="edu-block">
+          <h3>Certifications</h3>
+          <ul class="cert-list">
+            <li>Commercial Driver's License (CDL)</li>
+            <li>Hazmat Endorsement</li>
+            <li>Tanker Endorsement</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── Footer ───────────── -->
+  <footer>
+    <p>&copy; 2026 Shaquille Warren. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
