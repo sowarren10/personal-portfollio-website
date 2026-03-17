@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S. Warren | Data Science Portfolio</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #1a1a2e;
+      background: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    /* ── Header / Nav ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #1a1a2e;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    header .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+    header nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: #4cc9f0; }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #fff;
+      padding: 2rem;
+    }
+    #hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+    #hero h1 span { color: #4cc9f0; }
+    #hero p {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      max-width: 600px;
+      color: #c9d1d9;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      background: #4cc9f0;
+      color: #1a1a2e;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn:hover { background: #72d9f5; transform: translateY(-2px); }
+
+    /* ── Sections shared ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #0f3460;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: #4cc9f0;
+      border-radius: 2px;
+      margin-top: 0.4rem;
+    }
+
+    /* ── About Me ── */
+    #about { background: #fff; }
+    #about p {
+      margin-top: 1.5rem;
+      font-size: 1.05rem;
+      color: #444;
+      max-width: 700px;
+    }
+
+    /* ── Skills ── */
+    #skills { background: #f5f7fa; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .skill-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.4rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+    .skill-card h3 {
+      font-size: 1rem;
+      color: #0f3460;
+      margin-bottom: 0.6rem;
+    }
+    .skill-bar-bg {
+      background: #e0e0e0;
+      border-radius: 4px;
+      height: 8px;
+      overflow: hidden;
+    }
+    .skill-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #4cc9f0, #4361ee);
+      border-radius: 4px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #1a1a2e;
+      color: #888;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ───────────── Header ───────────── -->
+  <header>
+    <div class="logo">S. Warren</div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="mailto:sowarren10@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ───────────── Hero ───────────── -->
+  <section id="hero">
+    <h1>Hi, I'm <span>S. Warren</span></h1>
+    <p>
+      Welcome to my personal portfolio! I'm a data scientist passionate about
+      turning raw data into meaningful insights through analysis, visualisation,
+      and machine learning.
+    </p>
+    <a href="#about" class="btn">Learn More About Me</a>
+  </section>
+
+  <!-- ───────────── About Me ───────────── -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I'm a data enthusiast with a strong background in Python, statistical
+        analysis, and data visualisation. My work focuses on collecting,
+        cleaning, and interpreting complex datasets to support data-driven
+        decision-making.
+      </p>
+      <p>
+        I'm currently building this portfolio to showcase my projects and
+        demonstrate the end-to-end data analysis process — from raw data
+        ingestion through to interactive visualisations. I believe that clear,
+        well-communicated data stories can drive real impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- ───────────── Skills ───────────── -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Data Science Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Python</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Data Cleaning &amp; Wrangling</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Data Visualisation<br>(Matplotlib / Seaborn)</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Pandas &amp; NumPy</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Machine Learning<br>(scikit-learn)</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 70%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Exploratory Data Analysis</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 88%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>SQL</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Statistical Analysis</h3>
+          <div class="skill-bar-bg">
+            <div class="skill-bar" style="width: 78%"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── Footer ───────────── -->
+  <footer>
+    <p>&copy; 2026 S. Warren. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
