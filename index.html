@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --accent: #0f766e;
+      --accent-soft: #ccfbf1;
+      --border: #dbe4ee;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: linear-gradient(180deg, #eef6ff 0%, var(--bg) 35%, #f7fbff 100%);
+    }
+
+    .container {
+      width: min(960px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 0 4rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto;
+      color: #4b5563;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #0b4a45;
+    }
+
+    .skills-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .skills-list li {
+      background: var(--accent-soft);
+      border: 1px solid #99f6e4;
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    .resume-summary {
+      margin-bottom: 1.5rem;
+      color: #374151;
+    }
+
+    .resume-block {
+      margin-bottom: 2rem;
+    }
+
+    .resume-block h3 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent-soft);
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .resume-job {
+      margin-bottom: 1.25rem;
+    }
+
+    .resume-job-title {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .resume-job-meta {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .resume-job ul {
+      padding-left: 1.2rem;
+      color: #374151;
+    }
+
+    .resume-job ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    .resume-edu-item,
+    .resume-cert-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .resume-cert-list {
+      padding-left: 1.2rem;
+      color: #374151;
+    }
+
+    .resume-cert-list li {
+      margin-bottom: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <p class="name">Shaquille Warren</p>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Welcome to My Portfolio</h1>
+        <p>
+          I am passionate about solving real-world problems with data and creating useful insights through analytics and machine learning.
+        </p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-card">
+          <h2>About Me</h2>
+          <p>
+            I'm an aspiring IT professional with experience in the trucking industry, where I developed strong problem-solving, leadership, and safety focused decision making skills. 
+            I'm currently transitioning into technolog with some hands on experience in GitHub, Python, and data analysis.
+            I bring reliabilty, teamwork, and a strong work ethic to everything I do.
+            I look forward to applying my skills to impactful projects and collaborating with like-minded people.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-card">
+          <h2>Data Science Skills</h2>
+          <ul class="skills-list">
+            <li>Python (Pandas, NumPy)</li>
+            <li>Basic HTML/CSS</li>
+            <li>Data Visualization (Matplotlib, Seaborn)</li>
+            <li>Machine Learning (Scikit-learn)</li>
+            <li>SQL and Data Querying</li>
+            <li>Data Cleaning and Feature Engineering</li>
+            <li>Statistics and Hypothesis Testing</li>
+            <li>Git and GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="resume">
+      <div class="container">
+        <div class="section-card">
+          <h2>Resume</h2>
+
+          <p class="resume-summary">
+            Detail-oriented and dependable professional with 8+ years of experience in the trucking and logistics industry,
+            bringing strong problem-solving, operational efficiency, and leadership skills into the IT field. Experienced in
+            troubleshooting, compliance management, route optimization, and high-pressure decision-making. Seeking an entry-level
+            IT role where technical aptitude, analytical thinking, and customer service experience can contribute to organizational success.
+          </p>
+
+          <div class="resume-block">
+            <h3>Professional Experience</h3>
+
+            <div class="resume-job">
+              <p class="resume-job-title">CDL Driver &mdash; Hazmat &amp; Tanker Certified</p>
+              <p class="resume-job-meta">Various Employers &mdash; Virginia &nbsp;|&nbsp; 2016 &ndash; Present</p>
+              <ul>
+                <li>Operated commercial vehicles safely while maintaining strict DOT and Hazmat compliance.</li>
+                <li>Managed digital logging systems and electronic documentation.</li>
+                <li>Troubleshot vehicle and route-related issues under time-sensitive conditions.</li>
+                <li>Maintained accurate records and ensured regulatory compliance.</li>
+                <li>Coordinated with dispatch, clients, and warehouse teams to ensure efficient delivery operations.</li>
+                <li>Demonstrated leadership in team-based delivery environments.</li>
+              </ul>
+            </div>
+
+            <div class="resume-job">
+              <p class="resume-job-title">Warehouse Associate</p>
+              <p class="resume-job-meta">Various Employers &mdash; Virginia &nbsp;|&nbsp; 2013 &ndash; 2016</p>
+              <ul>
+                <li>Managed inventory control and logistics tracking systems.</li>
+                <li>Operated warehouse equipment and handled heavy freight.</li>
+                <li>Assisted in process improvement for shipping and receiving workflows.</li>
+                <li>Maintained accuracy in fast-paced distribution environments.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="resume-block">
+            <h3>Education</h3>
+            <div class="resume-edu-item"><strong>Liberty University</strong> &mdash; 2011 &ndash; 2012</div>
+            <div class="resume-edu-item"><strong>John Tyler Community College</strong> &mdash; 2013</div>
+            <div class="resume-edu-item"><strong>Advanced Studies Diploma</strong> &mdash; High School Graduate</div>
+          </div>
+
+          <div class="resume-block">
+            <h3>Certifications</h3>
+            <ul class="resume-cert-list">
+              <li>Commercial Driver's License (CDL)</li>
+              <li>Hazmat Endorsement</li>
+              <li>Tanker Endorsement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Shaquille Warren. All rights reserved.</p>
+      <p><a href="mailto:shaquillewarren10@yahoo.com">shaquillewarren10@yahoo.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
